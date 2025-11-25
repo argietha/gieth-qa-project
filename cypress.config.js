@@ -1,4 +1,4 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   projectId: "gd4xxp",
@@ -7,4 +7,10 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
-});
+  reporter: 'mochawesome',
+  reporterOptions: {
+    overwrite: false,
+    html: false,
+    json: true,
+  },
+})
