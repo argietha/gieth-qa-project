@@ -22,7 +22,7 @@ jobs:
       - name: Run Cypress on ${{ matrix.browser }}
         uses: cypress-io/github-action@v6
         with:
-          command: npx cypress run --browser ${{ matrix.browser }} --reporter-options '{\"reportDir\":\"cypress/reports/${{ matrix.browser }}\"}'
+          command: npx cypress run --browser ${{ matrix.browser }} --reporter-options reportDir=cypress/reports/chrome
 
       - name: Merge Mochawesome Reports
         run: |
