@@ -41,6 +41,7 @@ context('Actions', () => {
 
     it('T003 - login: Login with empty username', () => {
         // Empty username
+        cy.get('#user-name').clear()
 
         // Input valid password
         cy.get('#password').type('secret_sauce')
@@ -59,6 +60,7 @@ context('Actions', () => {
         cy.get('#user-name').should('have.value', 'standard_user')
 
         // Empty password
+        cy.get('#password').clear()
 
         // Click login button
         cy.get('#login-button').click()
@@ -69,8 +71,10 @@ context('Actions', () => {
 
     it('T005 - login: Login with empty username and password', () => {
         // Empty username
+        cy.get('#user-name').clear()
 
-        // Empty email
+        // Empty password
+        cy.get('#password').clear()
 
         // Click login button
         cy.get('#login-button').click()
@@ -110,6 +114,7 @@ context('Actions', () => {
 
     it('T008 - login: Close error message', () => {
         // Empty username
+        cy.get('#user-name').clear()
 
         // Input valid password
         cy.get('#password').type('secret_sauce')
